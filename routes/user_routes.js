@@ -17,6 +17,7 @@ const upload = multer({storage});
 
 router.post("/new-user", upload.single("avatar"), userController.createUser);
 router.get('/', userController.getLisUsers);
+router.post('/:id', userController.verify);
 router.get('/:id', userController.getById);
 router.patch('/:id', userController.editUser);
 router.delete('/:id', userController.deleteUser);
